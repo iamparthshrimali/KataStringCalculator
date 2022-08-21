@@ -42,6 +42,13 @@ public class TestClassForStringCalculator {
     {
     	assertEquals(7,StringCalculator.add("1,a,b,3"));
     }
+	
+	@Test //6	
+	public void NegativeHandledAndPrinted()
+	{
+			assertEquals(-1,StringCalculator.add("1,2,-3.-4,5,6"));
+	}
+	
     
 	
 }

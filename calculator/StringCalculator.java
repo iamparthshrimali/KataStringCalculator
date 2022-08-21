@@ -1,5 +1,8 @@
 package calculator;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class StringCalculator{
 
 	public static int add(String input) {
@@ -7,23 +10,41 @@ public class StringCalculator{
 		{
 			return 0;
 		}
+		String allNumbersArray[]=input.split(",");
+		ArrayList<Integer> negativeNumbers=new ArrayList<Integer>();
+		int sum=0,num=0;
+		int flag=0; //for negative number found or not
+		for(String number : allNumbersArray)
+		{
+		    num=StringToInteger(number);
+		    if(num>0)
+		    {
+		    	sum+=num;
+		    }
+		    else
+		    {
+		        negativeNumbers.add(num);
+		        flag=1; //negative number found
+		    }
+		}
+	    try
+	    {
+	    	if(flag==1)
+			{
+				throw new NegativeNumbersException("Negative numbers are not allowed. Numbers are "+ (negativeNumbers));
+			}
+	    }
+	    catch(NegativeNumbersException e)
+	    {
+	    	System.out.println(e.getMessage());
+	    	return -1;
+	    }
 		
-		int sum=sum(input);
 	    return sum;
 		
 	}
 
-	private static int sum(String input) {
-		// TODO Auto-generated method stub
-		String allNumbersArray[]=input.split(",");
-		int sum=0,num=0;
-		for(String number : allNumbersArray)
-		{
-		    num=StringToInteger(number);
-			sum+=num;
-		}
-		return sum;
-	}
+
 
 	private static int StringToInteger(String input) {
 		int num=0;
@@ -49,6 +70,12 @@ public class StringCalculator{
 
 	public static void main(String args[])
 	{
-		System.out.println("Answer: "+StringCalculator.add("1,2,3,a,b,c"));
+	    Scanner sc=new Scanner(System.in);
+	    System.out.println("Enter a string to find sum");
+	    String input=sc.next();
+	    if(StringCalculator.add(input)!=-1)
+	    {    
+	    	System.out.println("Answer: "+StringCalculator.add(input));
+	    }
 	}
 }
