@@ -16,10 +16,17 @@ public class StringCalculator {
 	private static int sum(String input) {
 		// TODO Auto-generated method stub
 		String allNumbersArray[]=input.split(",");
-		int sum=0;
+		int sum=0,num=0;
 		for(String number : allNumbersArray)
 		{
-			sum+=StringToInteger(number);
+			try {
+				num=StringToInteger(number);
+				
+			}catch(Exception e)
+			{
+				num=(number.charAt(0)+0)-96;
+			}
+			sum+=num;
 		}
 		return sum;
 	}
@@ -38,6 +45,6 @@ public class StringCalculator {
 
 	public static void main(String args[])
 	{
-		System.out.println("Answer: "+StringCalculator.add("2,3"));
+		System.out.println("Answer: "+StringCalculator.add("a,b,2,3"));
 	}
 }
