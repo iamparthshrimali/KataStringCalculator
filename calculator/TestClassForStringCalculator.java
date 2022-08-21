@@ -42,5 +42,6 @@ public class TestClassForStringCalculator {
     {
     	assertEquals(7,StringCalculator.add("1,a,b,3"));
     }
-
+    
+	
 }
