@@ -32,4 +32,11 @@ public class TestClassForStringCalculator {
 	{
 		assertEquals(5,StringCalculator.add("2,3"));
 	}
+	@Test //4
+	public void testForAnyAmountOfNumbers()
+	{
+		assertEquals(8,StringCalculator.add("1,4,3"));
+	}
+	
+	
 }
