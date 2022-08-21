@@ -1,6 +1,10 @@
 package calculator;
-//Test cases
-//1. Add
+
 public class StringCalculator {
 
+	public static int add(String string) {		
+		return 0;
+	}
+
+	
 }
