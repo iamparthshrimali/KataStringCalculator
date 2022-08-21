@@ -7,7 +7,14 @@ public class StringCalculator {
 		{
 			return 0;
 		}
-		return (StringToInteger(input));
+		String allNumbersArray[]=input.split(",");
+		int sum=0;
+		for(String number : allNumbersArray)
+		{
+			sum+=StringToInteger(number);
+		}
+	    return sum;
+		
 	}
 
 	private static int StringToInteger(String input) {
