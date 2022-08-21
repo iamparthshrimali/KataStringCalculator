@@ -11,7 +11,7 @@ import org.junit.Test;
 //4. Return sum of any amount of number provided in string seperated by comma
 //5. Alphabet should be handled (a=1,b=2,c=3,....,z=26)
 //6. For negative numbers in string throws an error and also print that number
-//7. Number greater than 1000 should be ignnored
+//7. Number greater than 1000 should be ignored
 //8. Allow add method to handle new line(\n) character as delimeter
 
 
@@ -21,8 +21,14 @@ public class TestClassForStringCalculator {
 	public void testForAnEmptyString() {
 		assertEquals(0,StringCalculator.add(""));
 	}
+	@Test //2
     public void testForSingleValue()
     {
-    	assertEquals(1,StringCalculator.add("1"));
+    	assertEquals(2,StringCalculator.add("2"));
     }
+	public void testForTwoValues()
+	{
+		assertEquals(5,StringCalculator.add("2,3"));
+	}
+	
 }
