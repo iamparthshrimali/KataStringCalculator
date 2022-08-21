@@ -46,9 +46,14 @@ public class TestClassForStringCalculator {
 	@Test //6	
 	public void NegativeHandledAndPrinted()
 	{
-			assertEquals(-1,StringCalculator.add("1,2,-3.-4,5,6"));
+		assertEquals(-1,StringCalculator.add("1,2,-3.-4,5,6"));
 	}
 	
     
-	
+   @Test //7
+   public void multiDelimeterSupported()
+   {
+	    assertEquals(5,StringCalculator.add("1,2\1,5"));
+   }
+   
 }
