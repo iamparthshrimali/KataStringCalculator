@@ -7,14 +7,21 @@ public class StringCalculator {
 		{
 			return 0;
 		}
+		
+		int sum=sum(input);
+	    return sum;
+		
+	}
+
+	private static int sum(String input) {
+		// TODO Auto-generated method stub
 		String allNumbersArray[]=input.split(",");
 		int sum=0;
 		for(String number : allNumbersArray)
 		{
 			sum+=StringToInteger(number);
 		}
-	    return sum;
-		
+		return sum;
 	}
 
 	private static int StringToInteger(String input) {
