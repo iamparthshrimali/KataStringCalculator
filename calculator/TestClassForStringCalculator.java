@@ -26,9 +26,6 @@ public class TestClassForStringCalculator {
     {
     	assertEquals(2,StringCalculator.add("2"));
     }
-	public void testForTwoValues()
-	{
-		assertEquals(5,StringCalculator.add("2,3"));
-	}
+	
 	
 }
